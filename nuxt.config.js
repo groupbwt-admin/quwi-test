@@ -13,7 +13,9 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [],
+  css: [
+    '@/assets/scss/main.scss'
+  ],
 
   loading: {color: 'red'},
 
