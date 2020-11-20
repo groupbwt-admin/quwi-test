@@ -3,7 +3,7 @@
     <Logo/>
     <ul class="nav-list">
       <li class="nav-item">
-        <nuxt-link to="/" class="nav-link">
+        <nuxt-link to="/projects" class="nav-link">
           projects
         </nuxt-link>
       </li>
