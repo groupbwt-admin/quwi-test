@@ -1,0 +1,90 @@
+.project {
+  max-width: 810px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 9px;
+  padding: 25px 45px;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+
+  .icon-block {
+    width: 100%;
+    max-width: 100px;
+
+    .icon {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .title-block {
+    width: 100%;
+    max-width: 240px;
+
+    .title {
+      font-size: 19px;
+      font-weight: bolder;
+      text-transform: capitalize;
+      word-break: break-word;
+      color: #000;
+    }
+  }
+
+  .status-block {
+    width: 100%;
+    max-width: 180px;
+
+    .status {
+      font-size: 19px;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: #008000;
+    }
+  }
+
+  .frequency-block {
+    width: 100%;
+    max-width: 150px;
+
+    .title {
+      font-size: 18px;
+      font-weight: normal;
+      color: #000;
+    }
+  }
+
+  .time-block {
+    width: 100%;
+    max-width: 75px;
+
+    .time {
+      font-size: 19px;
+      font-weight: bolder;
+      color: #000;
+    }
+  }
+}
+
+.back-block {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #c1c8d2;
+  border-bottom: 2px solid #fff;
+
+  .back-link {
+    display: inline-block;
+    padding: 18px 23px;
+    background-color: #bebebe;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+  }
+}
+
+.project-details {
+
+}
