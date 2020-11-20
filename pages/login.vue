@@ -1,23 +1,28 @@
 <template>
-  <section>
-    <h1>
-      Login page
-    </h1>
-    <form>
-      <div>
-        <input type="email">
-      </div>
-      <div>
-        <input type="password">
-      </div>
-      <button type="submit">login</button>
-    </form>
+  <section class="container">
+    <div class="row">
+      <h1 class="main-title custom-col">
+        login
+      </h1>
+    </div>
+    <div class="row">
+      <form class="custom-form custom-col">
+        <div class="form-block">
+          <input type="email" class="form-field" placeholder="email">
+        </div>
+        <div class="form-block">
+          <input type="password" class="form-field" placeholder="password">
+        </div>
+        <button type="submit" class="btn btn-main">login</button>
+      </form>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
-  name: "login"
+  name: "login",
+  layout: 'empty'
 }
 </script>
 

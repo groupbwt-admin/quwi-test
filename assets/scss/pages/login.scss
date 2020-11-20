@@ -1,0 +1,54 @@
+.row {
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.main-title {
+  margin-bottom: 25px;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.custom-form {
+  margin-bottom: 25px;
+
+  .form-block {
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    .form-field {
+      &::-webkit-input-placeholder {
+        text-transform: capitalize;
+      }
+
+      &::-moz-placeholder {
+        text-transform: capitalize;
+      }
+
+      &:-ms-input-placeholder {
+        text-transform: capitalize;
+      }
+
+      &::-ms-input-placeholder {
+        text-transform: capitalize;
+      }
+
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .btn-main {
+    padding-right: 50px;
+    padding-left: 50px;
+    background-color: #395378;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #202f44;
+    font-weight: bold;
+    border-radius: 5px;
+  }
+}
