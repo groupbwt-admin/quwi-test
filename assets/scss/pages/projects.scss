@@ -67,6 +67,7 @@
 }
 
 .back-block {
+  margin-bottom: 30px;
   padding-top: 14px;
   padding-bottom: 14px;
   background-color: #c1c8d2;
@@ -80,11 +81,40 @@
     font-weight: bold;
     text-transform: uppercase;
     color: #000;
-    border: 1px solid #bebebe;
-    border-radius: 5px;
   }
 }
 
 .project-details {
+  padding: 30px 45px;
+  background-color: #fff;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
 
+  .title {
+    margin-right: 95px;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: capitalize;
+    color: #000;
+  }
+
+  .project-title {
+    width: 100%;
+    max-width: 430px;
+    height: 54px;
+    margin-right: 8px;
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: normal;
+    text-transform: none;
+    line-height: 27px;
+    color: #000;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+  }
+
+  .btn {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
 }
