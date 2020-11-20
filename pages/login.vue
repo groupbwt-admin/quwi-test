@@ -13,7 +13,7 @@
         <div class="form-block">
           <input type="password" class="form-field" placeholder="password">
         </div>
-        <button type="submit" class="btn btn-main">login</button>
+        <button type="submit" class="btn btn-blue">login</button>
       </form>
     </div>
   </section>
