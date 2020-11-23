@@ -39,7 +39,11 @@
       font-size: 19px;
       font-weight: bold;
       text-transform: capitalize;
-      color: #008000;
+      color: #000;
+
+      &.active {
+        color: #008000;
+      }
     }
   }
 
