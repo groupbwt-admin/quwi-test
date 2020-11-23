@@ -1,0 +1,124 @@
+.project {
+  max-width: 810px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 9px;
+  padding: 28px 30px 24px 10px;
+  background-color: #fff;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+
+  .icon-block {
+    width: 100%;
+    padding: 0 35px;
+    max-width: 122px;
+    text-align: center;
+
+    .icon {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .title-block {
+    width: 100%;
+    max-width: 240px;
+
+    .title {
+      font: 19px 'arial-medium';
+      text-transform: capitalize;
+      word-break: break-word;
+      color: #000;
+    }
+  }
+
+  .status-block {
+    width: 100%;
+    max-width: 180px;
+
+    .status {
+      font: 19px 'arial-bold';
+      text-transform: capitalize;
+      color: #000;
+
+      &.active {
+        color: #008000;
+      }
+    }
+  }
+
+  .frequency-block {
+    width: 100%;
+    max-width: 150px;
+
+    .title {
+      font: 18px 'arial-regular';
+      line-height: 27px;
+      color: #000;
+    }
+  }
+
+  .time-block {
+    width: 100%;
+    max-width: 75px;
+
+    .time {
+      font: 19px 'arial-medium';
+      line-height: 27px;
+      color: #000;
+    }
+  }
+}
+
+.back-block {
+  margin-bottom: 30px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  background-color: #c1c8d2;
+  border-bottom: 2px solid #fff;
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    padding: 16px 23px;
+    background-color: #bebebe;
+    font: 16px 'arial-bold';
+    text-transform: uppercase;
+    line-height: 1;
+    color: #000;
+  }
+}
+
+.project-details {
+  padding: 30px 45px;
+  background-color: #fff;
+  border: 1px solid #bebebe;
+  border-radius: 5px;
+
+  .title {
+    margin-right: 95px;
+    font: 20px 'arial-regular';
+    text-transform: capitalize;
+    color: #000;
+  }
+
+  .project-title {
+    width: 100%;
+    max-width: 430px;
+    height: 54px;
+    margin-right: 8px;
+    padding: 10px 15px;
+    font: 20px 'arial-regular';
+    text-transform: none;
+    line-height: 27px;
+    color: #000;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+  }
+
+  .btn {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+}

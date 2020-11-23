@@ -1,0 +1,44 @@
+.main-title {
+  margin-bottom: 25px;
+  font: 24px 'arial-bold';
+  text-transform: uppercase;
+  line-height: 1;
+  color: #000;
+}
+
+.custom-form {
+  margin-bottom: 25px;
+
+  .form-block {
+    &:last-of-type {
+      margin-bottom: 30px;
+    }
+
+    .form-field {
+      &::-webkit-input-placeholder {
+        text-transform: capitalize;
+      }
+
+      &::-moz-placeholder {
+        text-transform: capitalize;
+      }
+
+      &:-ms-input-placeholder {
+        text-transform: capitalize;
+      }
+
+      &::-ms-input-placeholder {
+        text-transform: capitalize;
+      }
+
+      &::placeholder {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .btn {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
