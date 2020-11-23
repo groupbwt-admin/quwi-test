@@ -29,17 +29,26 @@
           </form>
         </div>
       </div>
+      <div v-if="this.errors.length !== 0">
+        <Errors :errors="errors"/>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
+import Errors from '@/components/Errors'
+
 export default {
   name: 'login',
   layout: 'empty',
+  components: {
+    Errors
+  },
   data: () => ({
     email: '',
-    password: ''
+    password: '',
+    errors: []
   }),
   methods: {
     async login() {
@@ -52,7 +61,7 @@ export default {
         })
         await this.$router.push('/')
       } catch (e) {
-        console.log(e)
+        this.errors = e.response.data.first_errors
       }
     }
   }
