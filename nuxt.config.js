@@ -30,8 +30,33 @@ export default {
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+  axios: {
+    baseURL: 'https://api.quwi.com/v2'
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {url: '/auth/login', method: 'post', propertyName: 'token'},
+          user: {url: '/auth/init', method: 'get', propertyName: false},
+          logout: {url: '/auth/logout', method: 'post', propertyName: 'token'},
+        },
+        tokenRequired: true,
+        tokenType: 'Bearer'
+      }
+    },
+    redirect: {
+      home: false
+    },
+    watchLoggedIn: true,
+    token: {
+      prefix: 'token.'
+    }
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {}
