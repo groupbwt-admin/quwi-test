@@ -3,11 +3,10 @@
     <section class="container-fluid back-block">
       <div class="container">
         <div class="row">
-          <a href="#"
-             @click="back"
-             class="back-link">
+          <div @click="back"
+               class="back-link cursor-pointer">
             back
-          </a>
+          </div>
         </div>
       </div>
     </section>
@@ -19,11 +18,10 @@
                  :value="project.project.name"
                  @input="updateInputName"
                  class="project-title">
-          <a href="#"
-             class="btn btn-blue"
-             @click.prevent="updateProjectName">
+          <div class="btn btn-blue cursor-pointer"
+               @click.prevent="updateProjectName">
             ok
-          </a>
+          </div>
         </div>
       </div>
     </section>
