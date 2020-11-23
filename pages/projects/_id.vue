@@ -3,7 +3,11 @@
     <section class="container-fluid back-block">
       <div class="container">
         <div class="row">
-          <a href="#" @click="back" class="back-link">back</a>
+          <a href="#"
+             @click="back"
+             class="back-link">
+            back
+          </a>
         </div>
       </div>
     </section>
@@ -11,9 +15,10 @@
       <div class="container project-details">
         <div class="row">
           <div class="title">name</div>
-          <div class="project-title" contenteditable="true">
-            quwi - desktop
-          </div>
+          <input type="text"
+                 :value="project.project.name"
+                 @input="updateInputName"
+                 class="project-title">
           <a href="#"
              class="btn btn-blue"
              @click.prevent="updateProjectName">
@@ -31,7 +36,21 @@ export default {
     back() {
       this.$router.back()
     },
-    updateProjectName() {
+    updateInputName(e) {
+      this.$store.commit('projects/updateProjectName', e.target.value)
+    },
+    async updateProjectName() {
+      await this.$store.dispatch('projects/updateProjectName', this.project)
+    }
+  },
+  async fetch({store, params}) {
+    if (store.getters['projects/project']) {
+      await store.dispatch('projects/fetchProject', params)
+    }
+  },
+  computed: {
+    project() {
+      return this.$store.getters['projects/project']
     }
   }
 }
