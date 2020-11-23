@@ -4,12 +4,19 @@
          :key="projectsList.id">
       <div v-for="project in projectsList"
            :key="project.id">
-        <a href="#"
-           @click.prevent="openProject(project)">
+        <div @click.prevent="openProject(project)"
+             class="cursor-pointer">
           <div class="project">
-            <div class="row">
+            <div class="row mx-0">
               <div class="icon-block">
-                <img :src="project.logo_url" alt="project icon" class="icon">
+                <img v-if="project.logo_url"
+                     :src="project.logo_url"
+                     alt="project icon"
+                     class="icon">
+                <img v-else
+                     src="~/assets/images/no-project.png"
+                     alt="project icon"
+                     class="icon">
               </div>
               <div class="title-block">
                 <div class="title">
@@ -39,18 +46,18 @@
               </div>
               <div class="time-block">
                 <div class="time">
-                  {{ project.spent_time_week }}
+                  {{ project.spent_time_week ? project.spent_time_week : startTime }}
                 </div>
                 <div class="time">
-                  {{ project.spent_time_month }}
+                  {{ project.spent_time_month ? project.spent_time_month : startTime }}
                 </div>
                 <div class="time">
-                  {{ project.spent_time_all }}
+                  {{ project.spent_time_all ? project.spent_time_all : startTime }}
                 </div>
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     </div>
   </div>
@@ -60,6 +67,9 @@
 
 export default {
   middleware: 'auth',
+  data: () => ({
+    startTime: '00:00:00'
+  }),
   methods: {
     openProject(project) {
       this.$router.push('/projects/' + project.id)
