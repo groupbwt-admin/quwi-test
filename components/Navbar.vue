@@ -3,7 +3,7 @@
     <Logo/>
     <ul class="nav-list">
       <li class="nav-item">
-        <nuxt-link to="/projects" class="nav-link">
+        <nuxt-link to="/" class="nav-link">
           projects
         </nuxt-link>
       </li>
@@ -19,16 +19,17 @@
 </template>
 
 <script>
-import Logo from "~/components/Logo"
+import Logo from '~/components/Logo'
 
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   components: {
     Logo
   },
   methods: {
-    logout() {
-      this.$router.push("/")
+    async logout() {
+      await this.$auth.logout()
+      await this.$router.push('/login')
     }
   }
 }
