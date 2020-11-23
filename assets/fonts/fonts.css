@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "arial-bold";
+  src: url("Arial/ArialBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "arial-medium";
+  src: url("Arial/ArialMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "arial-regular";
+  src: url("Arial/ArialRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
