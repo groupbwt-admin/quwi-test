@@ -8,11 +8,10 @@
         </nuxt-link>
       </li>
       <li class="nav-item">
-        <a href="#"
-           class="nav-link"
-           @click.prevent="logout">
+        <div class="nav-link cursor-pointer"
+             @click.prevent="logout">
           logout
-        </a>
+        </div>
       </li>
     </ul>
   </nav>
