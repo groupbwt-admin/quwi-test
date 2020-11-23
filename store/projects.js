@@ -21,19 +21,27 @@ export const mutations = {
 
 export const actions = {
   async fetchProjectList({commit}) {
-    const projects = await this.$axios.$get('https://api.quwi.com/v2/projects-manage/index')
-    commit('setProjectList', projects)
+    try {
+      const projects = await this.$axios.$get('https://api.quwi.com/v2/projects-manage/index')
+      commit('setProjectList', projects)
+    } catch (e) {
+      throw e
+    }
   },
   async fetchProject({commit}, params) {
-    const project = await this.$axios.$get('https://api.quwi.com/v2/projects-manage/' + params.id)
-    commit('setProject', project)
+    try {
+      const project = await this.$axios.$get('https://api.quwi.com/v2/projects-manage/' + params.id)
+      commit('setProject', project)
+    } catch (e) {
+      throw e
+    }
   },
   async updateProjectName({commit}, project) {
-      try {
-        await this.$axios.$post('https://api.quwi.com/v2/projects-manage/update?id=' + project.project.id, project.project)
-      } catch (e) {
-        throw Error.message
-      }
+    try {
+      await this.$axios.$post('https://api.quwi.com/v2/projects-manage/update?id=' + project.project.id, project.project)
+    } catch (e) {
+      throw e
+    }
   }
 }
 
