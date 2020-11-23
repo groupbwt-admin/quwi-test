@@ -16,8 +16,6 @@ body {
   box-sizing: border-box;
 }
 
-header,
-main,
 nav,
 section {
   display: block;
@@ -177,4 +175,41 @@ a {
 
 .default-wrapper {
   margin-top: 90px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.error-wrapper {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: #ff5252;
+  color: #fff;
+
+  .error-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background-color: transparent;
+  }
+
+  .error-block {
+    font-size: 16px;
+    font-weight: bold;
+
+    .error {
+      margin-bottom: 5px;
+    }
+  }
 }
