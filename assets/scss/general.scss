@@ -186,7 +186,7 @@ a {
   position: relative;
 }
 
-.error-wrapper {
+.notification-wrapper {
   position: absolute;
   top: 50%;
   right: 10px;
@@ -199,21 +199,28 @@ a {
   align-items: center;
   border-radius: 4px;
   padding: 16px;
-  background-color: #ff5252;
   color: #fff;
 
-  .error-icon {
+  &.error-wrapper {
+    background-color: #ff5252;
+  }
+
+  &.success-wrapper {
+    background-color: #4caf50;
+  }
+
+  .notification-icon {
     width: 28px;
     height: 28px;
     margin-right: 10px;
     background-color: transparent;
   }
 
-  .error-block {
+  .notification-block {
     font-size: 16px;
     font-weight: bold;
 
-    .error {
+    .notification {
       margin-bottom: 5px;
     }
   }
@@ -226,4 +233,8 @@ a {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.not-clickable {
+  cursor: not-allowed;
 }
