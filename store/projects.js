@@ -39,6 +39,7 @@ export const actions = {
   async updateProjectName({commit}, project) {
     try {
       await this.$axios.$post('/projects-manage/update?id=' + project.project.id, project.project)
+      commit('updateProjectName', project.project.name)
     } catch (e) {
       throw e
     }
