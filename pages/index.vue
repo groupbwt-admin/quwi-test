@@ -81,9 +81,7 @@ export default {
     }
   },
   async fetch({store}) {
-    if (store.getters['projects/projects'].length === 0) {
-      await store.dispatch('projects/fetchProjectList')
-    }
+    await store.dispatch('projects/fetchProjectList')
   }
 }
 </script>
