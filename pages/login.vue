@@ -29,7 +29,7 @@
           </form>
         </div>
       </div>
-      <div v-if="this.errors.length !== 0">
+      <div v-if="errors.length !== 0 && errorsVisible">
         <Errors :errors="errors"/>
       </div>
     </div>
@@ -48,7 +48,8 @@ export default {
   data: () => ({
     email: '',
     password: '',
-    errors: []
+    errors: [],
+    errorsVisible: false
   }),
   methods: {
     async login() {
@@ -61,7 +62,11 @@ export default {
         })
         await this.$router.push('/')
       } catch (e) {
+        this.errorsVisible = true
         this.errors = e.response.data.first_errors
+        setTimeout(() => {
+          this.errorsVisible = false
+        }, 2000)
       }
     }
   }

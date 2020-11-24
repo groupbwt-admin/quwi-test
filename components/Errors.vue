@@ -1,10 +1,10 @@
 <template>
-  <div class="custom-col error-wrapper">
-    <img src="~/assets/images/error-icon.svg" class="error-icon" alt="error icon">
-    <div class="error-block">
+  <div class="custom-col notification-wrapper error-wrapper">
+    <img src="~/assets/images/error-icon.svg" class="notification-icon" alt="error icon">
+    <div class="notification-block">
       <div v-for="(error, index) in errors"
            :key="index"
-           class="error">
+           class="notification">
         {{ error }}
       </div>
     </div>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-name: 'Errors',
+  name: 'Errors',
   props: {
     errors: Object
   }
