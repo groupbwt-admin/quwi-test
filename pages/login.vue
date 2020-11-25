@@ -48,7 +48,7 @@ export default {
   data: () => ({
     email: '',
     password: '',
-    errors: [],
+    errors: {},
     errorsVisible: false
   }),
   methods: {
