@@ -35,7 +35,9 @@ export default {
     }
   },
   data: () => ({
-    errors: {},
+    errorMessage: {
+      name: 'This field can not be empty!'
+    },
     errorsVisible: false,
     successMessage: '',
     successVisible: false
@@ -45,29 +47,39 @@ export default {
     SuccessMessage
   },
   methods: {
+    clearErrors() {
+      setTimeout(() => {
+        this.errorsVisible = false
+        this.$store.commit('projects/clearErrors')
+      }, 1500)
+    },
     updateInputName(e) {
-      if (e.target.value !== '') {
-        this.$store.commit('projects/updateProjectName', e.target.value)
-      } else {
+      if (e.target.value === '') {
         this.errorsVisible = true
+        this.$store.commit('projects/setErrors', this.errorMessage)
+        this.clearErrors()
+      } else {
+        this.$store.commit('projects/updateProjectName', e.target.value)
       }
     },
     async updateProjectName() {
-      if (!this.errorsVisible) {
+      await this.$store.dispatch('projects/updateProjectName', this.project)
+      if ((Object.keys(this.errors).length === 0) && !this.errorsVisible) {
         this.successVisible = true
         this.successMessage = 'Your changes successfully saved!'
-        await this.$store.dispatch('projects/updateProjectName', this.project)
         setTimeout(() => {
           this.successVisible = false
           this.$router.push('/')
         }, 1500)
       } else {
-        this.errors = {name: 'This field can not be empty!'}
-        setTimeout(() => {
-          this.errorsVisible = false
-          this.errors = {}
-        }, 1500)
+        this.errorsVisible = true
+        this.clearErrors()
       }
+    }
+  },
+  computed: {
+    errors() {
+      return this.$store.getters['projects/errors']
     }
   }
 }
