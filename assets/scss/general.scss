@@ -187,6 +187,7 @@ a {
 }
 
 .notification-wrapper {
+  max-width: 300px;
   position: absolute;
   top: 50%;
   right: 10px;
@@ -222,6 +223,10 @@ a {
 
     .notification {
       margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

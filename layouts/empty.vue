@@ -1,11 +1,12 @@
 <template>
-<div class="empty-wrapper">
-  <Nuxt class="content"/>
-</div>
+  <div class="empty-wrapper">
+    <Nuxt class="content"/>
+  </div>
 </template>
 
 <script>
 export default {
-name: 'empty'
+  name: 'empty',
+  middleware: 'auth'
 }
 </script>

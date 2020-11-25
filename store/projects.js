@@ -5,6 +5,7 @@ export const state = () => ({
       name: ''
     }
   },
+  errors: {}
 })
 
 export const mutations = {
@@ -16,6 +17,12 @@ export const mutations = {
   },
   updateProjectName(state, name) {
     state.project.project.name = name
+  },
+  setErrors(state, errors) {
+    state.errors = errors
+  },
+  clearErrors(state) {
+    state.errors = {}
   }
 }
 
@@ -25,7 +32,8 @@ export const actions = {
       const projects = await this.$axios.$get('/projects-manage/index')
       commit('setProjectList', projects)
     } catch (e) {
-      throw e
+      commit('setErrors', e.response.data.first_errors)
+      console.log(e)
     }
   },
   async fetchProject({commit}, params) {
@@ -33,7 +41,8 @@ export const actions = {
       const project = await this.$axios.$get('/projects-manage/' + params.id)
       commit('setProject', project)
     } catch (e) {
-      throw e
+      commit('setErrors', e.response.data.first_errors)
+      console.log(e)
     }
   },
   async updateProjectName({commit}, project) {
@@ -41,12 +50,14 @@ export const actions = {
       await this.$axios.$post('/projects-manage/update?id=' + project.project.id, project.project)
       commit('updateProjectName', project.project.name)
     } catch (e) {
-      throw e
+      commit('setErrors', e.response.data.first_errors)
+      console.log(e)
     }
   }
 }
 
 export const getters = {
   projects: state => state.projects,
-  project: state => state.project
+  project: state => state.project,
+  errors: state => state.errors
 }
